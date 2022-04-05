@@ -7,9 +7,42 @@
     <title>Cake House</title>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".cakesMenu").click(function(){
+                $("html, body").animate({scrollTop:$(".cakes").offset().top - 60}, 1000)
+                return false;
+            });
+            $(".serviceMenu").click(function(){
+                $("html, body").animate({scrollTop:$(".service").offset().top - 60}, 1000)
+                return false;
+            });
+            $(".chefsMenu").click(function(){
+                $("html, body").animate({scrollTop:$(".chefs").offset().top - 60}, 1000)
+                return false;
+            });
+            $(".contactMenu").click(function(){
+                $("html, body").animate({scrollTop:$(".contact").offset().top - 60}, 1000)
+                return false;
+            });
+        });
+    </script>
 </head>
 <body>
+<!-- 
+    <h3>중앙에 위치한 로고와 양측면에 위치한 메뉴들</h3>
+    <nav class="testHead">
+        <ul>
+            <li><a href="">메뉴1</a></li>
+            <li><a href="">메뉴2</a></li>
+            <li><a href=""><img src="./img/logo.png" alt=""></a></li>
+            <li><a href="">메뉴3</a></li>
+            <li><a href="">메뉴4</a></li>
+        </ul>
+    </nav> -->
 
+    <!-- position : sticky;의 적용은 body의 바로 하단에 적용 -->
 
     <div class="top_info">
         <div class="wrap">
@@ -33,16 +66,16 @@
     <header>
         <div class="wrap">
             <ul>
-                <li><a href="#">Cakes</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#"><img src="./img/logo.png" alt="케잌하우스 로고"></a></li>
-                <li><a href="#">Chefs</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="cakesMenu"><a href="#">Cakes</a></li>
+                <li class="serviceMenu"><a href="#">Service</a></li>
+                <li class="logoMenu"><a href="#"><img src="./img/logo.png" alt="케잌하우스 로고"></a></li>
+                <li class="chefsMenu"><a href="#">Chefs</a></li>
+                <li class="contactMenu"><a href="#">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    
+    <!--/* SECTION PART - MAIN1*/-->
     <section id="main1">
         <div class="wrap">
             <div class="txt_part">
@@ -56,22 +89,24 @@
         </div>
     </section>
 
-    
-    <section id="main2">
+    <!--/* SECTION PART - MAIN2*/-->
+    <section id="main2" class="cakes">
         <div class="wrap">
             <div class="title">
                 <h2>Our Featured Cakes</h2>
                 <h4>Cake & Bakery make delicious products</h4>
             </div>
             <div class="content">
-                
+                <!-- 1 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Chocho Cupcake</h3>
                         <p>$8.00</p>
                         <button>Add to Cart</button>
+                            <!-- pode ser [<a>] -->
                     </div>
                 </div>
+                <!-- 2 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Happy Glory</h3>
@@ -79,6 +114,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 3 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Chocho Berry</h3>
@@ -86,6 +122,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 4 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Raseberry Cakes</h3>
@@ -93,6 +130,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 5 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Choco Brownie</h3>
@@ -100,6 +138,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 6 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Berry Pie</h3>
@@ -107,6 +146,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 7 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Sugar Party</h3>
@@ -114,6 +154,7 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <!-- 8 -->
                 <div class="box">
                     <div class="cover_bgc">
                         <h3>Cute Bunny</h3>
@@ -125,7 +166,8 @@
         </div>
     </section>
 
-    <section id="main3">
+    <!-- /* SECTION PART - MAIN3*/ -->
+    <section id="main3" class="service">
         <div class="wrap">
             <div class="title">
                 <h2>Offer Services</h2>
@@ -214,7 +256,8 @@
     </section>
 
     
-    <section id="main4">
+    <!-- /* SECTION PART - MAIN4*/ -->
+    <section id="main4" class="chefs">
         <div class="wrap">
             <div class="box">
                 <h2>Our Chefs</h2>
@@ -244,7 +287,8 @@
         </div>
     </section>
 
-    <section id="main5">
+    <!-- /* SECTION PART - MAIN 5*/ -->
+    <section id="main5" class="contact">
         <div id="map_1"></div>
         <div class="cover">
             <div class="wrap">
@@ -256,6 +300,7 @@
                         something to us we will answer to you.</p>
                     </div>
                     <div class="cont">
+                        
                         <div class="input_line">
                             <input type="text" name="username" id="user_name" placeholder="NAME" autocomplete="off">
                         </div>
@@ -263,11 +308,12 @@
                             <input type="email" name="email" id="useremail" placeholder="EMAIL" autocomplete="off">
                         </div>
                         <div class="input_line">
-                            <input type="text" name="userphone" id="user_phone" placeholder="PHONE NUMBER" autocomplete="off">
+                            <input type="number" name="userphone" id="user_phone" placeholder="PHONE NUMBER" autocomplete="off">
                         </div>
                         <div class="input_line">
                             <input type="text" name="message" id="user_message" placeholder="YOUR MESSAGE" autocomplete="off">
                         </div>
+
                         <div class="btn">
                             <input type="submit" value="SEND MESSAGE" autocomplete="off">
                         </div>
@@ -277,7 +323,8 @@
         </div>
     </section>
 
-    <footer id="footer1">
+    <!-- /* footer*/ -->
+    <footer>
         <div class="top">
             <div class="wrap">
                 <div class="box">
@@ -323,6 +370,14 @@
 
 
 
+
+    <section id="main_contact">
+        <div id="map"></div><!--스크립트로 지도 가져올 곳-->
+        <div class="cover"></div><!--지도 위에 공간을 #main_map 가로, 세로 사이즈로 덮는다.-->
+     </section>
+
+
+    <!-- MAP -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMOwJdqgkxI6MQb4E95pSSBF1TABF5pZA&callback=initMap"></script>
     <script>
         function initMap() {

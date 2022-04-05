@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6, p{margin: 0;}
 ul, ol{margin: 0; padding: 0; list-style: none;}
 a{text-decoration: none;}
 
+/*position : sticky; 적용 예정 top을 헤더영역만 해당*/
+
+/*중앙에 위치한 로고와 양측면에 위치한 메뉴들*/
 .testHead{width: 100%; height: 60px; background: #ffa;}
 .testHead ul{
     width: 1200px; height: 100%; 
@@ -30,6 +33,7 @@ a{text-decoration: none;}
 .testHead ul li a img{height: 40px;}
 
 
+/* TOP_INFO PART */
 .top_info{
     width: 100%;
     height: 40px;
@@ -40,6 +44,7 @@ a{text-decoration: none;}
     height: 100%;
     margin: 0 auto;
     padding: 0 10px;
+    /* background: #ee66aa; */
     display: flex;
     justify-content: space-between;
     align-items: center;}
@@ -54,8 +59,8 @@ a{text-decoration: none;}
 .top_info .wrap .info ul li img{
     display: block;
     height: 14px;
-    filter: brightness(0) invert(100%);}
-   
+    filter: brightness(0) invert(100%);
+        /*trocar cor da imagem : brightness(0) : deixa completamente preto + invert(100%) : a cor 100% contraria (branco)*/}
 .top_info .wrap .info ul li p{
     font-size: 14px;
     line-height: 1;
@@ -71,12 +76,15 @@ a{text-decoration: none;}
 .top_info .wrap .sns ul li a img{
     display: block;
     height: 16px;
-    filter: brightness(0) invert(90%);
+    filter: brightness(0) invert(90%); /*ou brightness(100) - Lacuna Value : brightness(1) => 원본색상
+    Lacuna Value : brightness(양의 정수) => 원본 색상으로 차이를 주는 값
+    Lacuna Value for CSS filter: 필터의 수치를 증가시켜 주는 값*/
     transition: filter 0.5s;}
 
 .top_info .wrap .sns ul li:hover a img{filter: brightness(0) invert(100%);}
 
 
+/* header PART */
 header{
     width: 100%;
     height: 60px;
@@ -86,6 +94,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;}
+        /* JUNCAO DESSES PARA COLAR O TOP HEAD NA TELA MESMO QUE VOCE DESCA A PAGINA */
 
 header .wrap{
     width: 1200px;
@@ -114,6 +123,8 @@ header .wrap ul li a img{
     height: 48px;}
 
 
+
+/* SECTION PART - MAIN1*/
 #main1{
     width: 100%;
     height: 500px;
@@ -165,9 +176,28 @@ header .wrap ul li a img{
     background-color: #f295b2;
     color: #fff;}
 
+
+    /* #main1 .wrap .txt_part a{
+        display: block;
+        width: 200px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #555;
+        font-size: 18px;
+        transition: background-color 0.5s, color 0.5s;}
+
+    #main1 .wrap .txt_part a:hover{color: #fff; background-color: #f295b2;} */
+
+
+
+/* SECTION PART - MAIN2*/
 #main2{
     width: 100%;
-    height: 970px;
+    height: 970px; /*depos tirar*/
     background-image: url(../img/deco_01.png), url(../img/deco_02.png);
     background-repeat: no-repeat;
     background-size: auto 80%;
@@ -178,6 +208,7 @@ header .wrap ul li a img{
     width: 1200px;
     margin: 0 auto;
     padding: 100px 10px;
+    /* background-color: #ededed; */
 }
 
 
@@ -210,7 +241,8 @@ header .wrap ul li a img{
 
 #main2 .wrap .content{    
     margin-left: -10px;
-    margin-right: -10px;
+    margin-right: -10px; 
+        /* PARAR COMPENSAR O ESPACO TIRADO DO [padding: 0 10px;] - DENTRO DO (#main2 .wrap) */
     display: flex;
     flex-wrap: wrap;}
 
@@ -273,6 +305,27 @@ header .wrap ul li a img{
 #main2 .wrap .content .box .cover_bgc button:hover{
     background-color: #74a9b9;}
 
+    /* pode seer [<a>] */
+/* #main2 .wrap .content .box .cover_bgc a{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 120px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: #94c9d9;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.5s;}
+
+#main2 .wrap .content .box .cover_bgc a:hover{
+    background-color: #74a9b9;} */
+
+
+
+/* SECTION PART - MAIN3*/
 #main3{
     width: 100%;
     height: auto;
@@ -365,7 +418,7 @@ header .wrap ul li a img{
     line-height: 30px;
     padding-bottom: 10px;}
 
-#main3 .wrap .content .box .right .cont_text p{   font-size: 14px;}
+#main3 .wrap .content .box .right .cont_text p{font-size: 14px;}
 
 #main3 .wrap .content .box button{
     position: absolute;
@@ -384,9 +437,13 @@ header .wrap ul li a img{
     background-color: #f295b2;
     color: #fff;}
 
-#main3 .wrap .content .box button:hover{box-shadow: 0 0 3px #000}
+#main3 .wrap .content .box button:hover{
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s;}
 
 
+
+/* SECTION PART - MAIN4*/
 #main4{
     width: 100%;
     height: auto;}
@@ -402,7 +459,7 @@ header .wrap ul li a img{
 #main4 .wrap .box{
     width: calc(25% - 20px);
     margin: 100px 10px;
-}
+    /* background-color: #dedede; */}
 
 #main4 .wrap .box h2{
     font-size: 48px;
@@ -418,11 +475,15 @@ header .wrap ul li a img{
     height: 280px;
     background-size: cover;
     background-position: 50% 50%;
-    margin-bottom: 20px;}
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+    border-radius: 10px;}
 
 #main4 .wrap .box:nth-child(2) .img_part{background-image: url(../img/chef_02.jpg);}
 #main4 .wrap .box:nth-child(3) .img_part{background-image: url(../img/chef_04.jpg);}
 #main4 .wrap .box:nth-child(4) .img_part{background-image: url(../img/chef_03.jpg);}
+
+#main4 .wrap .box:hover .img_part{transform: scale(1.05)}
 
 #main4 .wrap .box .txt_part{
     color: #555;
@@ -435,10 +496,12 @@ header .wrap ul li a img{
     line-height: 30px;
     margin-bottom: 20px;}
 
-#main4 .wrap .box .txt_part p{
-    font-size: 14px;}
+#main4 .wrap .box .txt_part p{font-size: 14px;}
 
 
+
+
+    /* <!-- /* SECTION PART - MAIN 5*/ 
 
 #main5{
     width: 100%;
@@ -497,7 +560,8 @@ header .wrap ul li a img{
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #fff;
-    color: #fff;}
+    color: #fff;
+    outline-color: #f295b2;}
 
 input::placeholder{color: #ccc;}
 
@@ -509,13 +573,16 @@ input::placeholder{color: #ccc;}
     background-color: #f295b2;
     border-radius: 18px;
     border: none;
-    color: #fff;}
+    color: #fff;
+    cursor: pointer;}
 
+#main5 .cover .wrap .box .cont .btn input:active{box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6), inset -2px -2px 4px rgba(255, 255, 255, 0.4);}
 
-#footer1{}
+/* footer */
+footer{}
 
-#footer1 .top{background-color: #333333;}
-#footer1 .top .wrap{
+footer .top{background-color: #333333;}
+footer .top .wrap{
     width: 1200px;
     height: auto;
     margin: 0 auto;
@@ -523,48 +590,48 @@ input::placeholder{color: #ccc;}
     display: flex;
     justify-content: center;}
 
-#footer1 .top .wrap .box{
+footer .top .wrap .box{
     width: calc(25% - 20px);
     margin: 0 10px;
     color: #cfcfcf;}
 
-#footer1 .top .wrap .box .logo_part{
+footer .top .wrap .box .logo_part{
     width: 180px;
     height: 30px;
     line-height: 30px;
     background-image: url(../img/footer_logo.png);
     margin-bottom: 20px;}
 
-#footer1 .top .wrap .box p{font-size: 14px;}
+footer .top .wrap .box p{font-size: 14px;}
 
-#footer1 .top .wrap .box h3{
+footer .top .wrap .box h3{
     font-size: 20px;
     line-height: 30px;
     padding-bottom: 20px;}
 
-#footer1 .top .wrap .box ul{}
-#footer1 .top .wrap .box ul li{padding-bottom: 10px;}
-#footer1 .top .wrap .box ul li a{
+footer .top .wrap .box ul{}
+footer .top .wrap .box ul li{padding-bottom: 10px;}
+footer .top .wrap .box ul li a{
     color: #cfcfcf;
     font-size: 14px;}
     
-#footer1 .top .wrap .box:nth-child(2) ul li a:hover{color: #fff;}
+footer .top .wrap .box:nth-child(2) ul li a:hover{color: #fff;}
 
-#footer1 .top .wrap .box ul li p{
+footer .top .wrap .box ul li p{
     color: #cfcfcf;
     font-size: 14px;}
 
 
-#footer1 .top .wrap .box:last-child ul li:first-child p, #footer1 .top .wrap .box:last-child ul li:last-child p{color: #f295b2; font-weight: bold;}
+footer .top .wrap .box:last-child ul li:first-child p, footer .top .wrap .box:last-child ul li:last-child p{color: #f295b2; font-weight: bold;}
 
 
 
-#footer1 .bottom{
+footer .bottom{
     background-color: #000;
     text-align: center;}
 
-#footer1 .bottom .wrap{
+footer .bottom .wrap{
     width: 1200px;
     margin: 0 auto;}
 
-#footer1 .bottom .wrap p{color: #f295b2;}
+footer .bottom .wrap p{color: #f295b2;}
